@@ -55,6 +55,11 @@ change over minutes and are not line voltages (they do not track the CC
 lines).  Temperature does **not** appear anywhere in this frame; the vendor
 must fetch it with a command that has not been identified.
 
+The retail listing advertises D+/D-/CC1/CC2 monitoring and their curves, so
+these slots probably carry those lines in some mode - but on the tested unit
+they decayed (4551 -> 2275 -> 1137) instead of tracking the pins, so the
+mapping remains unverified.
+
 The reply's tail (offsets `0x2C`-`0x3F`) is constant across time, reboots and
 a reflash - it looks like stored configuration rather than telemetry.
 
