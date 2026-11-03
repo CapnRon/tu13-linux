@@ -1,0 +1,2 @@
+# ATORCH TU13 USB/Type-C tester - allow non-root HID access
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5750", MODE="0666"

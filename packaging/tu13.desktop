@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=TU13 Tester
+Comment=Measurements, console and firmware update for the ATORCH TU13
+Exec=tu13
+Icon=utilities-system-monitor
+Terminal=false
+Categories=Utility;Electronics;
