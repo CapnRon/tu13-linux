@@ -89,6 +89,7 @@ class MeasureTab(QWidget):
         layout.addLayout(grid)
 
         self.chart = QChart()
+        self.chart.setTheme(QChart.ChartThemeDark)
         self.series = []
         colours = ["#4dc3ff", "#7dff8a", "#ffd24d", "#ff8a8a"]
         for i in CHART_FIELDS:
@@ -369,8 +370,35 @@ class MainWindow(QMainWindow):
         super().closeEvent(event)
 
 
+DARK_QSS = """
+QWidget { background-color: #1b1d21; color: #d9dee5; }
+QTabWidget::pane { border: 1px solid #2c2f34; }
+QTabBar::tab { background: #23262b; color: #aeb4bd; padding: 6px 14px; }
+QTabBar::tab:selected { background: #2d3138; color: #eef2f7; }
+QPlainTextEdit, QComboBox, QLineEdit {
+    background: #141619; color: #cfd4dc; border: 1px solid #2c2f34;
+}
+QPushButton {
+    background: #2a2e35; color: #dfe4ea; border: 1px solid #3a3f47;
+    padding: 5px 12px; border-radius: 4px;
+}
+QPushButton:hover { background: #343943; }
+QPushButton:disabled { color: #6b7280; background: #202329; }
+QGroupBox { border: 1px solid #2c2f34; margin-top: 10px; padding-top: 6px; }
+QGroupBox::title { subcontrol-origin: margin; left: 8px; padding: 0 4px; color: #b8bfc9; }
+QProgressBar {
+    background: #141619; border: 1px solid #2c2f34;
+    text-align: center; color: #dfe4ea;
+}
+QProgressBar::chunk { background: #3d7dd8; }
+QStatusBar { color: #9aa1ab; }
+"""
+
+
 def main():
     app = QApplication(sys.argv)
+    app.setStyle("Fusion")
+    app.setStyleSheet(DARK_QSS)
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
