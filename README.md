@@ -1,10 +1,28 @@
 # TU13 Linux
 
 Linux desktop application and CLI for the **ATORCH TU13** USB/Type-C tester
-(VID `0483`, PID `5750`).  Built by reverse-engineering the vendor's Windows
-application and verified against hardware.
+(VID `0483`, PID `5750`), sold on Amazon as the **Eversame USB Tester**.
+Built by reverse-engineering the vendor's Windows application and verified
+against hardware.
 
 ![measure tab](docs/measure-tab.png)
+
+## Tested hardware
+
+Development and verification were done on the **Eversame USB Tester**
+([Amazon B0FNCPSMNM](https://www.amazon.com/dp/B0FNCPSMNM)), sold as
+"Eversame TU13".  Over USB it identifies itself as:
+
+| Mode | Product string | Manufacturer |
+|---|---|---|
+| application | `ATORCH TU13 V1.1.5` | `APP` |
+| bootloader | `ATORCH C13P V1.0.2` | `IAP` |
+
+Same HID IDs (`0483:5750`), so it is the ATORCH TU13 platform in an Eversame
+shell; ATORCH-branded units should behave identically.
+
+Advertised range (both brands): DC 0-50 V, 0-6.5 A continuous (12 A peak),
+0-325 W.  Protocols: PD2.0/PD3.0, PPS, QC2.0/3.0, AFC, FCP, SCP, VOOC.
 
 ## Features
 
